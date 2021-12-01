@@ -9,7 +9,7 @@ data = cgi.FieldStorage()
 
 #setting up the different variables
 #  #received from the webpage
-selection = data.getValue('buttonHit')
+selection = data.getvalue('buttonHit')
 if(selection == 'Reset Pin'):
     pin = data.getvalue('Enter New Pin')
 else:
