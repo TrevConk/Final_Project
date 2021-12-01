@@ -17,6 +17,8 @@ else:
         pinData = json.load(pinDataRead)
         pin = pinData['pin']
 dataDump = {'pin':pin,'selection':selection}
+with open('pinData.txt', 'w') as f:
+        json.dump(dataDump, f)
 
 print('Content-type: text/html\n\n')
 print('''
