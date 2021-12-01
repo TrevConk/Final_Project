@@ -9,7 +9,7 @@ data = cgi.FieldStorage()
 
 #setting up the different variables
 pin = data.getvalue('pin') #received from the webpage
-dataDump = {'pin':pin} #create list called data dump containing the pin for the password
+dataDump = {'pin':pin,'selection':'openpage'} #create list called data dump containing the pin for the password
 
 #check the pinData.txt for an existing pin and logging that within the system
 with open('pinData.txt', 'r') as pinDataRead:
@@ -59,17 +59,22 @@ elif(currentPin != pin):
 else:
     with open('pinData.txt', 'w') as f:
         json.dump(dataDump, f)
+
     print('Content-type: text/html\n\n')
     print('''
     <html>
-    <form action="/cgi-bin/open_page.py" method="POST">
-        <b>Correct Password Entered</b>
-        <b>Enter Pin</b>
-        <input type="text" name="pin"><br>
-        <input type="submit" name="submit" value="submit"><br>
+    <form action="/cgi-bin/alarm_page.py" method="POST">
+        <b>Alarm Control Page</b><br>
+        <b>Turn Off Alarm</b><br>
+        <input type="submit" name="buttonHit" value="Turn Off Alarm"><br>
+        <b>Arm Alarm</b><br>
+        <input type="submit" name="buttonHit" value="Arm Alarm"><br>
+        <b>Reset Pin Password:</b><br>
+        <input type="text" name="Enter New Pin"><br>
+        <input type="submit" name="buttonHit" value="Reset Pin"><br>
     </input>
-</form>
-</html>''')
+    </form>
+    </html>''')
 
 
 
