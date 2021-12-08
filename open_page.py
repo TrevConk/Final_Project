@@ -17,30 +17,19 @@ with open('pinData.txt', 'r') as pinDataRead:
     currentPin = pinData['pin'] #logging pin data as current pin within the system going to be used to compare latter
 
 #Checking if the current pin and pin value is empty, if true create a webpage asking to input a new pin
-if(currentPin == '' and pin == '') or (currentPin == '' and not pin.isdecimal() and pin.length() != 4):
-    print('Content-type: text/html\n\n')
-    print('''
-    <html>
-    <form action="/cgi-bin/open_page.py" method="POST">
-        <b>Enter New Pin Using Four Numbers</b>
-        <input type="text" name="pin"><br>
-        <input type="submit" name="submit" value="submit"><br>
-    </input>
-    </form>
-    </html>''')
 
 #checking if the current pin does not equal pin and if pin is empty
-elif(currentPin != pin and pin != ''):
+if(currentPin != pin and pin != ''):
     print('Content-type: text/html\n\n')
     print('''
     <html>
     <form action="/cgi-bin/open_page.py" method="POST">
-        <b>Please enter a Pin</b><br>
+        <b>Enter Pin</b><br>
         <input type="text" name="pin"><br>
         <input type="submit" name="submit" value="submit"><br>
     </input>
-    </form>
-    </html>''')
+</form>
+</html>''')
 
 #checks to see if the pin entered was wrong
 elif(currentPin != pin):
