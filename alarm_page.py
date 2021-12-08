@@ -13,7 +13,7 @@ selection = data.getvalue('buttonHit')
 if(selection == 'Reset Pin'):
     pin = data.getvalue('Enter New Pin')
 else:
-    with open('pinData.txt', 'w') as pinDataRead:
+    with open('pinData.txt', 'r') as pinDataRead:
         pinData = json.load(pinDataRead)
         pin = pinData['pin']
 dataDump = {'pin':pin,'selection':selection}
