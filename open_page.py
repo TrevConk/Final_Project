@@ -4,7 +4,7 @@ import cgitb
 import json
 
 #Setip for the creation of the new webpage
-cgitb.enable(display=0, logdir="/Documents/htmlissues")
+cgitb.enable(display=0, logdir="/home/pi/Documents/htmlissues")
 data = cgi.FieldStorage()
 
 #setting up the different variables
