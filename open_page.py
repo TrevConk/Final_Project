@@ -19,7 +19,7 @@ with open('pinData.txt', 'r') as pinDataRead:
 #Checking if the current pin and pin value is empty, if true create a webpage asking to input a new pin
 
 #checking if the current pin does not equal pin and if pin is empty
-if currentPin != pin and pin == 'None':
+if currentPin != pin and pin == None:
     print('Content-type: text/html\n\n')
     print('''
     <html>
