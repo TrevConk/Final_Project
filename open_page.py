@@ -37,7 +37,7 @@ elif(currentPin != pin):
     print('''
     <html>
     <form action="/cgi-bin/open_page.py" method="POST">
-    '''
+    ''')
     print(pin)
     print('''
         <b>Wrong Pin! Please enter a Pin</b>
